@@ -1,6 +1,6 @@
 window.WineView = Backbone.View.extend({
 
-    initialize: function () {
+    initialize:function () {
         this.render();
     },
 
@@ -10,10 +10,11 @@ window.WineView = Backbone.View.extend({
     },
 
     events: {
-        "change"        : "change",
-        "click .save"   : "beforeSave",
-        "click .delete" : "deleteWine",
-        "drop #picture" : "dropHandler"
+        "change"            : "change",
+        "click .save"       : "beforeSave",
+        "click .delete"     : "deleteWine",
+        "drop #picture"     : "dropHandler",
+        "dragover #picture" : "dragoverHandler"
     },
 
     change: function (event) {
@@ -84,6 +85,10 @@ window.WineView = Backbone.View.extend({
             $('#picture').attr('src', reader.result);
         };
         reader.readAsDataURL(this.pictureFile);
+    },
+
+    dragoverHandler: function(event) {
+        event.preventDefault();
     }
 
 });

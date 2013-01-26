@@ -57,24 +57,24 @@ h5 {
     margin-left: 0px !important;
     margin-right: 20px !important;
 }
-
+/*
 legend {
     font-family: 'Andika';
 }
-
+*/
 .home-hero {
-    font-family: "Andika";
-    font-size: 36;
-    color: white;
+/*    font-family: "Arvo"; 
+    font-size: 40;  */
     background-image: url('img/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: -19px;
     padding: 180px;
+    color: white;
     text-align : center;
     text-shadow: 1px 1px 1px #000;
 }
-
+/*
 @media only screen and ( max-width : 1000px ) {
     .home-hero {
         padding:100px;
@@ -86,10 +86,9 @@ legend {
         padding:32px;
     }
 }
-
+*/
 
 .home-hero .btn {
-    font-family: "arvo";
     width: 160px;
     margin: 10px 4px;
 }
@@ -122,4 +121,25 @@ legend {
 .well h3 {
     margin-top: 0px;
     margin-bottom: 0px;
+    text-shadow: 1px 1px 1px #000;
+}
+.well {
+    background-color: #666666;
+    color: #cccccc;
+    text-shadow: 1px 1px 1px #000;
+}
+ 
+#connections {
+    font-size: 96px;
+    line-height: 96px;
+    color: #ff6600;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#visits thead  tr td {
+  font-weight: bold;
+}
+
+#pageViews thead  tr td {
+  font-weight: bold;
 }

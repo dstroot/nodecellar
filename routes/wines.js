@@ -1,11 +1,29 @@
-var mongo = require('mongodb');
+var mongo     = require('mongodb')     // https://npmjs.org/package/mongodb
+  , utils     = require('../config');
 
-var Server = mongo.Server,
-    Db = mongo.Db,
-    BSON = mongo.BSONPure;
+var Server    = mongo.Server,
+    Db        = mongo.Db,
+    BSON      = mongo.BSONPure;
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('winedb', server, {safe: true});
+var server    = new Server('localhost', 27017, {auto_reconnect: true});
+db            = new Db('winedb', server, {safe: true});
+
+/*
+        db.collection('system.namespaces', {safe:true}, function (err, collection) {
+            collection.findOne({name : "winedb.wines"}).toArray(function(err, items)
+                if (err) {
+                    console.log('Error: ' + err);
+                    console.log("The 'wines' collection doesn't exist. Creating it with sample data...");
+                    populateDB();
+                } else if (items.length != 1) {
+                    console.log("The 'wines' collection doesn't exist. Creating it with sample data...");
+                    populateDB();
+                } else {
+                    // nothing to do
+                }
+            });
+        });
+*/
 
 db.open(function(err, db) {
     if(!err) {
@@ -184,6 +202,7 @@ exports.deleteWine = function(req, res) {
 /*-----------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.
 // You'd typically not find this code in a real-life app, since the database would already exist.
+
 var populateDB = function() {
 
     var wines = [
