@@ -11,7 +11,7 @@ var AppRouter = Backbone.Router.extend({
 
     initialize: function () {
         this.headerView = new HeaderView();
-        $('.header').html(this.headerView.el);
+        $('#header').html(this.headerView.el);
     },
 
     home: function (id) {
@@ -28,7 +28,7 @@ var AppRouter = Backbone.Router.extend({
         wineList.fetch({success: function(){
             $("#content").html(new WineListView({model: wineList, page: p}).el);
         }});
-        this.headerView.selectMenuItem('home-menu');
+        this.headerView.selectMenuItem('browse-menu');
     },
 
     wineDetails: function (id) {
@@ -36,7 +36,7 @@ var AppRouter = Backbone.Router.extend({
         wine.fetch({success: function(){
             $("#content").html(new WineView({model: wine}).el);
         }});
-        this.headerView.selectMenuItem();
+        this.headerView.selectMenuItem('browse-menu');
     },
 
 	addWine: function() {

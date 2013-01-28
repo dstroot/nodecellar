@@ -59,13 +59,16 @@ app.configure(function () {
     // Order is important! You may `app.use(app.router)` before or after 
     // static() middleware. If placed before them your routes will be matched 
     // BEFORE file serving takes place. 
-
+    var pub = path.join(__dirname, '/public');
     app.use(express.compress());     // for GZIP compression
-    app.use(express.favicon('/public/ico/favicon.ico'));
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.static(path.join(__dirname, 'public/css')));
-    app.use(express.static(path.join(__dirname, 'public/ico')));
-    app.use(express.static(path.join(__dirname, 'public/img')));
+    app.use(express.favicon(path.join(pub, '/ico/favicon.ico')));
+    app.use(express.static(pub));
+    app.use(express.static(path.join(pub, '/css')));
+    app.use(express.static(path.join(pub, '/ico')));
+    app.use(express.static(path.join(pub, '/img')));
+    app.use(express.static(path.join(pub, '/js')));
+    //app.use(express.static(path.join(pub, '/js/lib')));
+    //app.use(express.static(path.join(pub, '/pics')));
 });
 
 /* ==============================================================
