@@ -1,17 +1,33 @@
 {
-    "name": "wine-cellar",
-    "description": "Wine Cellar Application",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.1.x",
-        "mongodb": "1.2.x",
-        "socket.io": "0.9.x",
-        "uglify-js": "2.2.x",
-        "less-middleware": "0.1.x"
-    },
-    "engines": {
-        "node": "0.8.x",
-        "npm": "1.1.x"
-    }
+  "name": "mycellar",
+  "description": "",
+  "version": "0.0.1-1",
+  "private": true,
+  "analyze": false,
+  "readme": "Nothing here!",
+  "subdomain": "mycellar",
+  "author": {
+    "name": "Dan Stroot",
+    "email": "dan@thestroots.com"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "express": "3.0.x",
+    "less-middleware": "0.1.x",
+    "uglify-js": "2.2.x",
+    "socket.io": "0.9.x",
+    "mongodb": "1.2.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
